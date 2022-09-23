@@ -29,7 +29,7 @@ for i in range(len(data)):
     Σx4 += toPower(data.iloc[i].x, 4)
     Σx2y += toPower(data.iloc[i].x, 2) * data.iloc[i].y
 
-    #plt.scatter([data.iloc[i].x], [data.iloc[i].y], color="black")
+    plt.scatter([data.iloc[i].x], [data.iloc[i].y], color="black")
 
 a = np.array([[Σx4, Σx3, Σx2], [Σx3, Σx2, Σx], [Σx2, Σx, n]])
 b = np.array([Σx2y, Σxy, Σy])
@@ -38,10 +38,16 @@ solve = np.linalg.solve(a, b)
 
 print(f'y = {solve[0]}x² + {solve[1]}x + {solve[2]}')
 
+x = np.linspace(-10, 10, 1000)
+
+# calculate the y value for each element of the x vector
+y = (x**2)*solve[0] + solve[1]*x + solve[2]
+plt.plot(x, y)
+
 # plt.plot(list(range(0, 100)), [m * X + b for X in range(0, 100)], color="red", label=f'y = {m}x + {b}')
 #plt.ylabel('y')
 #plt.xlabel('x')
 # plt.legend()
 
 
-#plt.show()
+plt.show()
