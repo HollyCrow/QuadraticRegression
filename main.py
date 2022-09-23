@@ -40,14 +40,11 @@ print(f'y = {solve[0]}x² + {solve[1]}x + {solve[2]}')
 
 x = np.linspace(-10, 10, 1000)
 
-# calculate the y value for each element of the x vector
 y = (x**2)*solve[0] + solve[1]*x + solve[2]
 plt.plot(x, y)
 
-# plt.plot(list(range(0, 100)), [m * X + b for X in range(0, 100)], color="red", label=f'y = {m}x + {b}')
-#plt.ylabel('y')
-#plt.xlabel('x')
-# plt.legend()
+plt.ylabel('y')
+plt.xlabel('x')
 
 
 plt.show()
