@@ -36,9 +36,9 @@ b = np.array([Σx2y, Σxy, Σy])
 
 solve = np.linalg.solve(a, b)
 
-print(f'y = {solve[0]}x² + {solve[1]}x + {solve[2]}')
+print((f'y = {solve[0]}x² + {solve[1]}x + {solve[2]}').replace("+ -", "- "))
 
-x = np.linspace(-10, 10, 1000)
+x = np.linspace(-10, 100, 1000)
 
 y = (x**2)*solve[0] + solve[1]*x + solve[2]
 plt.plot(x, y)
