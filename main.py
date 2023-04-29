@@ -1,11 +1,14 @@
 import math
-
+import sys
 import pandas as pd
 import matplotlib.pyplot as plt
 from math import pow as toPower
 import numpy as np
-
-data = pd.read_csv("data.csv")
+print(sys.argv)
+if (len(sys.argv) < 2):
+	print("error, no csv file given. Usage: python main.py example.csv")
+	exit
+data = pd.read_csv(sys.argv[1])
 
 Σx = 0
 Σy = 0
